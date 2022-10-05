@@ -83,6 +83,36 @@ public class App {
 
     //todo Task 5
     public void marks(){
+        Scanner scanner = new Scanner(System.in);
+
+        int counter = 1;
+        int mark = 0;
+        int sum = 0;
+        int negCount = 0;
+
+        do { if (mark > 5 || mark < 0) {
+            System.out.println("Invalid mark!");
+        }
+            System.out.print("Mark " + counter + ": ");
+            mark = scanner.nextInt();
+            if (mark <=5) {
+                counter++;
+                sum = sum + mark;
+            }
+            if (mark == 5) {
+                negCount ++;
+            }
+
+        } while (mark != 0);
+
+        float average = (float)sum / (counter - 2) ;
+
+        if (sum <= 0) {
+            System.out.println("Average: 0,00");
+        } else {
+            System.out.printf("Average: %.2f" + System.lineSeparator(), average);
+        }
+        System.out.println("Negative marks: "+ negCount);
         // input your solution here
     }
 
