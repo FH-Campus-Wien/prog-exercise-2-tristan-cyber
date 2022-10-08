@@ -70,8 +70,6 @@ public class App {
 
         }
 
-
-
     // input your solution here
     }
 
