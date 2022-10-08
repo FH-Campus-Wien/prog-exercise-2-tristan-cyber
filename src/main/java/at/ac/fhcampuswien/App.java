@@ -55,6 +55,7 @@ public class App {
         // input your solution here
     }
 
+
     //todo Task 3
     public void printPyramid(){
         int ROWS = 6;
