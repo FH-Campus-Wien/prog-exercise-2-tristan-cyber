@@ -76,6 +76,52 @@ public class App {
 
     //todo Task 4
     public void printRhombus(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("h: ");
+        int h = scanner.nextInt();
+
+        System.out.print("c: ");
+        char c = scanner.next().charAt(0);
+
+        int spaces = h/2;
+
+        if (h%2 == 1) {
+            for (int i = 0; i < h/2; i++) {
+                for (int j = 0; j < spaces - i; j++) {
+                    System.out.print(" ");
+                }
+                for (int j = c - i; j <= c; j++) {
+                    System.out.print((char)j);
+
+                }
+                for (int j = 0; j < i; j++) {
+                    System.out.print((char)(c-j-1));
+                }
+                System.out.println();
+            }
+            spaces = 0;
+            for (int i = h/2; i >= 0; i--) {
+                for (int j = 0; j < spaces; j++){
+                    System.out.print(" ");
+                }
+                for (int j = i; j >= 0; j--) {
+                    System.out.print((char)(c-j));
+                }
+                for (int j = 1; j <= i; j++) {
+                    System.out.print((char)(c-j));
+                }
+                System.out.println("");
+                spaces = spaces + 1;
+
+            }
+
+
+        } else System.out.println("Invalid number!");
+
+
+        // gibt ersten Charakter dieses Strings
+
         // zum char einlesen char c = scan.next().charAt(0);
         // input your solution here
     }
@@ -117,6 +163,30 @@ public class App {
 
     //todo Task 6
     public void happyNumbers(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("n: ");
+        int number = scanner.nextInt();
+        int reminder = 0;
+        int sum = 0;
+
+
+        while (number != 1) {
+            sum = 0;
+            while (number != 0) {
+                reminder = number % 10;
+                sum = sum + (reminder * reminder);
+                number = number / 10;
+            }
+            number = sum;
+
+            if (number == 4) {
+                System.out.println("Sad number!");
+                return;
+            }
+        }
+
+        System.out.println("Happy number!");
         // input your solution here
     }
 
