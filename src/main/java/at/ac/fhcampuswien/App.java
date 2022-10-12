@@ -139,8 +139,11 @@ public class App {
             if (mark > 5 || mark < 0) {
             System.out.println("Invalid mark!");
         }
-            System.out.print("Mark " + counter + ": ");
+            System.out.print("Mark " + counter  + ": ");
             mark = scanner.nextInt();
+            if (mark == 0 && counter > 1){
+                counter = counter-1;
+            }
             if (mark <=5 && mark > 0) {
                 counter++;
                 sum = sum + mark;
@@ -148,10 +151,13 @@ public class App {
             if (mark == 5) {
                 negCount ++;
             }
+           /* if (mark == 0){
+                counter = counter-1;
+            }*/
 
         } while (mark != 0);
 
-        float average = (float)sum / (counter - 2) ;
+        float average = (float)sum / (counter) ;
 
         if (sum <= 0) {
             System.out.println("Average: 0,00");
