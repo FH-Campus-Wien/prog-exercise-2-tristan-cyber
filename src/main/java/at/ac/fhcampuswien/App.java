@@ -135,12 +135,13 @@ public class App {
         int sum = 0;
         int negCount = 0;
 
-        do { if (mark > 5 || mark < 0) {
+        do {
+            if (mark > 5 || mark < 0) {
             System.out.println("Invalid mark!");
         }
             System.out.print("Mark " + counter + ": ");
             mark = scanner.nextInt();
-            if (mark <=5) {
+            if (mark <=5 && mark > 0) {
                 counter++;
                 sum = sum + mark;
             }
